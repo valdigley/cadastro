@@ -1,0 +1,55 @@
+# 📋 LISTA DE ARQUIVOS PARA DOWNLOAD
+
+## ✅ Arquivos obrigatórios (baixe todos):
+
+### 📁 Pasta raiz:
+- [ ] index.html
+- [ ] package.json  
+- [ ] tsconfig.json
+- [ ] tsconfig.node.json
+- [ ] vite.config.ts
+- [ ] tailwind.config.js
+- [ ] postcss.config.js
+- [ ] Dockerfile
+- [ ] nginx-easypanel.conf
+- [ ] .dockerignore
+- [ ] .env
+
+### 📁 Pasta src/:
+- [ ] src/App.tsx
+- [ ] src/main.tsx
+- [ ] src/index.css
+- [ ] src/vite-env.d.ts
+
+### 📁 Pasta src/components/:
+- [ ] src/components/AuthForm.tsx
+- [ ] src/components/ClientCard.tsx
+- [ ] src/components/ClientForm.tsx
+- [ ] src/components/ClientsList.tsx
+
+### 📁 Pasta src/hooks/:
+- [ ] src/hooks/useAuth.tsx
+
+### 📁 Pasta src/lib/:
+- [ ] src/lib/supabase.ts
+
+## ❌ NÃO baixe estes arquivos:
+- ❌ node_modules/ (pasta)
+- ❌ dist/ (pasta)
+- ❌ .git/ (pasta)
+- ❌ package-lock.json
+- ❌ README-*.md (arquivos de documentação)
+- ❌ deploy.sh
+- ❌ ecosystem.config.js
+- ❌ nginx.conf (diferente do nginx-easypanel.conf)
+
+## 📝 Como usar esta lista:
+1. **Marque cada arquivo** conforme for baixando
+2. **Crie as pastas** src/, src/components/, src/hooks/, src/lib/
+3. **Coloque cada arquivo** na pasta correta
+4. **Quando todos estiverem marcados**, crie o ZIP
+
+## 🎯 Resultado final:
+Você deve ter **15 arquivos** no total, organizados em **4 pastas**.
+
+Tamanho do ZIP: aproximadamente **2-3 MB**
