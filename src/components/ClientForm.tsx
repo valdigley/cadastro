@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { supabase } from '../lib/supabase'
 import { useAuth } from '../hooks/useAuth'
-import { ClientInsert } from '../lib/supabase'
 import { Save, X } from 'lucide-react'
 
 interface ClientFormProps {
@@ -33,13 +32,25 @@ export function ClientForm({ onSuccess, onCancel }: ClientFormProps) {
     setLoading(true)
 
     try {
-      const clientData: ClientInsert = {
+      // First, get the photographer_id for the current user
+      const { data: photographer, error: photographerError } = await supabase
+        .from('photographers')
+        .select('id')
+        .eq('user_id', user.id)
+        .single()
+
+      if (photographerError || !photographer) {
+        throw new Error('Photographer profile not found. Please complete your profile first.')
+      }
+
+      const clientData = {
         name: formData.name,
         email: formData.email,
         phone: formData.phone || '',
         company: formData.company || null,
         address: formData.address || null,
-        notes: formData.notes || null
+        notes: formData.notes || null,
+        photographer_id: photographer.id
       }
 
       const { error } = await supabase
