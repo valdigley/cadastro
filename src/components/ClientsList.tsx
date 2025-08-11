@@ -58,7 +58,7 @@ export function ClientsList() {
   const filteredClients = clients.filter(client =>
     client.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     client.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    client.company.toLowerCase().includes(searchTerm.toLowerCase())
+    (client.company || '').toLowerCase().includes(searchTerm.toLowerCase())
   )
 
   return (
