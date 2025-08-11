@@ -39,8 +39,7 @@ export function ClientForm({ onSuccess, onCancel }: ClientFormProps) {
         phone: formData.phone || '',
         company: formData.company || null,
         address: formData.address || null,
-        notes: formData.notes || null,
-        user_id: user.id
+        notes: formData.notes || null
       }
 
       const { error } = await supabase
