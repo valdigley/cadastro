@@ -34,7 +34,12 @@ export function ClientForm({ onSuccess, onCancel }: ClientFormProps) {
 
     try {
       const clientData: ClientInsert = {
-        ...formData,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || '',
+        company: formData.company || null,
+        address: formData.address || null,
+        notes: formData.notes || null,
         user_id: user.id
       }
 
